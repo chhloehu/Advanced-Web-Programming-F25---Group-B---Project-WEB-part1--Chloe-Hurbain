@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Disasters - Vue Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Natural Disasters Explorer</h1>
+    </header>
+
+    <!-- Conteneur Vue -->
+
+    <div id="app" class="container">
+      <h1>{{ currentItem.title }}</h1>
+      <img :src="currentItem.img" alt="Disaster Image">
+      <div>
+        <button @click="toggleDescription">
+          {{ showDescriptionBox ? 'Hide Description' : 'Show Description' }}
+        </button>
+      </div>
+      <div v-if="showDescriptionBox" class="description-box">
+        {{ currentItem.description }}
+      </div>
+      <div>
+        <button @click="prevItem">Previous</button>
+        <button @click="nextItem">Next</button>
+      </div>
+    </div>
+
+    <script src="data/data.js"></script>
+    <script src="js/script.js"></script>
+    <footer>
+      Chloé Hurbain - Project Part 1 - Advanced Web Programming F25 - Group B - october 2025
+    </footer>
+  </body>
+</html>
